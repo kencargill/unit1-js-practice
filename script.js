@@ -58,9 +58,48 @@ if (travelType === "foot") {
     let passengerCount = prompt("How many passengers?");
     cost = 0.1 * distance * passengerCount
     time = distance / 400;
-    
+
 } else {
     console.log(`Sorry. ${travelType} is an invalid option.`);
 };
 
 console.log(`Traveling ${distance} miles by ${travelType} took ${time} hours and cost $${cost}!`);
+
+let costBar = "Cost: ";
+
+for (let i = 0; i < cost; i++) {
+    costBar += "$";
+  }
+  console.log(costBar); // "Cost: $$$$$"
+
+let timeBar = "Time: ";
+
+  for (let i = 0; i < time; i++) {
+    timeBar += "/";
+  }
+  console.log(timeBar); 
+
+  if (travelType === "car") {
+
+    let meterCostRemaining = 1.00;
+
+while (meterCostRemaining > 0){
+
+    let coin = prompt(`$${meterCostRemaining} remaining on parking meter. Type a coin to insert.`);
+
+    if (coin === "penny") {
+        meterCostRemaining -= .01
+    } else if (coin === "nickel") {
+        meterCostRemaining -= .05
+    } else if (coin === "dime") {
+        meterCostRemaining -= .10
+    } else if (coin === "quarter") {
+        meterCostRemaining -= .25
+    } else {
+        console.log("Please insert a different coin.");
+    }
+    console.log("Meter cost remaining: " + meterCostRemaining);
+    }
+    console.log("You have paid the parking meter.");
+  };
+  
